@@ -1,0 +1,95 @@
+<zk>
+	<style>
+		.widthLabel {
+			color: red;
+			font-size: 1.1em;
+			line-height: 250%;
+		}
+	</style>
+	<div viewModel="@id('vm') @init('org.zkoss.zk.ViewModel')">
+		<label class="widthLabel" value="@bind(vm.browserWidth)"/>
+		<apply template="@bind(vm.mainTemplate)" from="main"/>
+	</div>
+	<template name="verti">
+		<vlayout>
+			<apply template="${from}"/>
+		</vlayout>
+	</template>
+	<template name="hori">
+		<hlayout>
+			<apply template="${from}"/>
+		</hlayout>
+	</template>
+	<template name="main">
+		<div width="@bind(vm.navWidth)">
+			<navbar orient="vertical">
+				<navitem label="ZK's Pizza"/>
+				<navitem label="Customers"/>
+				<navitem label="Orders"/>
+			</navbar>
+		</div>
+		<div hflex="1">
+			<apply template="@bind(vm.rightTemplate)" from="right"/>
+		</div>
+	</template>
+	<template name="right">
+		<apply template="@bind(vm.gridTemp)"/>
+		<tabbox orient="@bind(vm.tabboxOrient)" hflex="2" height="200px">
+			<tabs width="70px">
+				<tab label="Tab A"/>
+				<tab label="Tab B"/>
+				<tab label="Tab C"/>
+			</tabs>
+			<tabpanels>
+				<tabpanel>This is panel A</tabpanel>
+				<tabpanel>This is panel B</tabpanel>
+				<tabpanel>This is panel C</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</template>
+	<template name="grid4">
+		<grid hflex="3">
+			<columns>
+				<column>Language</column>
+				<column>Contributor</column>
+				<column>Charset</column>
+				<column>Comment</column>
+			</columns>
+			<rows>
+				<row>
+					<label value="Arabic (ar)"/>
+					<label value="Ayman Elgharabawy"/>
+					<label value="iso-8859-6"/>
+					<textbox width="100%"/>
+				</row>
+				<row>
+					<label value="Hungarian (hu)"/>
+					<label value="Andreas Klein"/>
+					<label value="iso-8859-2"/>
+					<textbox width="100%"/>
+				</row>
+			</rows>
+		</grid>
+	</template>
+	<template name="grid3">
+		<grid hflex="3">
+			<columns>
+				<column>Language</column>
+				<column>Contributor</column>
+				<column>Charset</column>
+			</columns>
+			<rows>
+				<row>
+					<label value="Arabic (ar)"/>
+					<label value="Ayman Elgharabawy"/>
+					<label value="iso-8859-6"/>
+				</row>
+				<row>
+					<label value="Hungarian (hu)"/>
+					<label value="Andreas Klein"/>
+					<label value="iso-8859-2"/>
+				</row>
+			</rows>
+		</grid>
+	</template>
+</zk>
