@@ -5,7 +5,7 @@
 	<artifactId>zkmatchmedia-demo</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<properties>
-		<zk.version>8.0.2.FL.20160329-Eval</zk.version>
+		<zk.version>8.0.2-Eval</zk.version>
 		<commons-io>2.4</commons-io>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}-FL-${maven.build.timestamp}</packname>
